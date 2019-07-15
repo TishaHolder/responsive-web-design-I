@@ -1,3 +1,440 @@
 /* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 900px;
+	/*height: 1200px;*/
+	margin: 0 auto;
+	justify-content: space-around;
+	align-content: space-between;
+	
+}
+
+header {
+	display: flex;
+	width: 100%;	
+	height: auto;/**************/
+	background-color: dodgerblue;	
+	padding: 10px;	
+	justify-content: space-between;
+	align-items: center;	
+}
+
+header nav {
+    display: flex;
+    width: 70%;   
+	height: auto;
+	justify-content: space-around;	
+    align-items: flex-end;/*align items at the bottom of the container*/
+    
+}
+
+header nav a {
+	text-decoration: none;
+	color: black;
+	font-size: 16px;	
+	font-family: 'Bangers', cursive;	
+}
+
+header .logo-div {
+    display: flex;
+    width: 30%;
+    height: 50px;
+    justify-content: flex-end;
+    
+}   
+
+.get-started {
+	display: flex;
+	width: 900px;
+	height: 350px;
+	text-align: center;	
+	justify-content: center;
+	align-items: center;
+	padding-top: 30px;	
+	
+}
+
+.get-started .get-started-details {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	height: 300px;	
+	justify-content: center;
+	align-items: center;
+}
+
+.get-started .get-started-details h1 {
+	font-size: 60px;
+}
+
+.get-started .get-started-details button {
+	background-color: white;
+	border: 2px solid dodgerblue;
+	font-weight: bold;
+	padding: 5px 30px;	
+}
+
+.get-started button:hover {
+	background-color: dodgerblue;
+	color: white;
+	
+}
+
+.get-started .innovation-logo {
+	display: flex;
+	width: 400px;
+	height: 300px;	
+	padding: 50px 0;
+	justify-content: center;
+	align-items: center;	
+}
+
+.get-started .innovation-logo img {
+	width: 280px;
+	height: 280px;	
+}
+
+.main-content {
+	display: flex;
+	flex-wrap: wrap;
+	width: 900px;
+	height: 550px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;	
+	justify-content: space-between; /*space between each item on the main axis*/
+	align-content: space-around;	/*space around each item on the cross axis*/
+	
+}
+
+.main-content .features {
+	width: 425px;
+	height: auto;
+}
+
+.main-content .about {
+	width: 425px;
+	height: auto;	
+}
+
+.main-content .main-content-image img {
+	width: 900px;
+}
+
+.main-content .services {
+	width: 275px;
+}
+
+.main-content .product {
+	width: 275px;
+	
+}
+
+.main-content .vision {
+	width: 275px;
+	
+}
+
+.contact {
+	display: flex;	
+	flex-direction: column;
+	width: 900px;
+	height: 150px;
+	margin-top: 20px;
+	justify-content: space-around; /*space around each item on the y axis because display is column*/
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*800px & Below - Tablet View*/
+@media (max-width: 800px) {
+
+	.container {
+		width: 100%;
+		
+	}
+
+	header {
+		width: 100%;
+		flex-direction: column-reverse;					
+		justify-content: center;
+		align-content: center;	
+		padding: 0px;	
+	}
+
+	header nav {
+		width: 100%;		
+
+	}
+
+	header .logo-div {
+		width: 100%;
+		justify-content: center;
+		margin-bottom: 20px;
+		
+	}   
+
+	.get-started {
+		width: 100%;
+		padding-top: 0;			
+		
+	}
+	
+	.get-started .get-started-details {
+		width: 100%;		
+	}
+
+	
+	.get-started .innovation-logo {
+		display: none;
+	}
+
+	.main-content {
+		width: 100%;	
+		height: auto;		
+		
+	}
+
+	.main-content .features {
+		width: 49%;
+		height: auto;
+		
+	}
+	
+	.main-content .about {
+		width: 49%;
+		height: auto;
+		
+	}
+	
+	.main-content .main-content-image img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.main-content .services {
+		width: 33%;
+		height: auto;
+	}
+	
+	.main-content .product {
+		width: 33%;
+		height: auto;
+		
+	}
+	
+	.main-content .vision {
+		width: 33%;
+		height: auto;
+		
+	}	
+
+	.contact {
+		width: 100%;
+		height: auto;		
+	}
+	
+	footer {
+		width: 100%;
+	}
+
+}/*end tablet view*/
+
+/*500px & Below - Mobile View*/
+@media (max-width: 500px) {
+
+	.container {
+		width: 100%;
+		
+	}
+
+	header {
+		width: 100%;
+		height: 100%;
+		flex-direction: column-reverse;					
+		justify-content: center;
+		align-content: center;	
+		padding: 0px;	
+	}
+
+	header nav {
+		width: 100%;	
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+	}		
+
+	header nav a {		
+		width: 100%;
+		color: white;
+		line-height: 2;
+		font-size: 2rem;
+		border-top: 1px solid rgb(41, 39, 39);
+		border-bottom: 1px solid gray;
+		text-align: center;
+	}
+
+	header nav a:hover {
+		background-color: white;
+		color: dodgerblue;
+
+	}
+
+	header .logo-div {
+		width: 100%;
+		justify-content: center;
+		margin-bottom: 20px;
+		
+	}   
+
+	.get-started {
+		width: 100%;
+		padding-top: 0;			
+		
+	}
+	
+	.get-started .get-started-details {
+		width: 100%;		
+	}
+
+	
+	.get-started .innovation-logo {
+		display: none;
+	}
+
+	.main-content {
+		width: 100%;	
+		height: auto;		
+		
+	}
+
+	.main-content .features {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+		
+	}
+	
+	.main-content .about {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+		
+	}
+	
+	.main-content .main-content-image img {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+	}
+	
+	.main-content .services {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+	}
+	
+	.main-content .product {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+		
+	}
+	
+	.main-content .vision {
+		width: 100%;
+		height: auto;
+		margin: 20px 0;
+		
+	}	
+
+	.contact {
+		width: 100%;
+		height: auto;	
+		margin-bottom: 20px;	
+	}
+	
+	footer {
+		width: 100%;
+	}
+}	
+
+}/*end mobile view*/
+
 
 
